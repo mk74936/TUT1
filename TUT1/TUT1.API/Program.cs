@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using TUT1.API.Data;
+using TUT1.API.Repositories;
 
 internal class Program
 {
@@ -23,6 +24,8 @@ internal class Program
         }
         );
 
+
+        builder.Services.AddScoped<IRegionRepository, RegionRepository>();
 
         var app = builder.Build();
 
