@@ -36,6 +36,8 @@ internal class Program
             app.UseSwaggerUI();
         }
 
+        builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
         app.UseHttpsRedirection();
 
         app.UseAuthorization();

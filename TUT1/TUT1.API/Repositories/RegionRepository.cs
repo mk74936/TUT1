@@ -1,4 +1,5 @@
-﻿using TUT1.API.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using TUT1.API.Data;
 using TUT1.API.Models.Domain;
 
 namespace TUT1.API.Repositories
@@ -12,9 +13,9 @@ namespace TUT1.API.Repositories
 
         public TUT1DBContext TUT1DBContext { get; }
 
-        public IEnumerable<Region> GetAll()
+        public async Task<IEnumerable<Region>> GetAllAsync()
         {
-            return TUT1DBContext.Regions.ToList();
+            return await TUT1DBContext.Regions.ToListAsync();
         }
     }
 }
